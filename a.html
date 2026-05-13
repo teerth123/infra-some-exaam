@@ -1,0 +1,306 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MCQ Practice</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #111827;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 700px;
+      background: #1f2937;
+      padding: 24px;
+      border-radius: 16px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .question {
+      font-size: 22px;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    button.option {
+      padding: 16px;
+      border: none;
+      border-radius: 12px;
+      background: #374151;
+      color: white;
+      font-size: 16px;
+      text-align: left;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button.option:hover {
+      background: #4b5563;
+    }
+
+    button.correct {
+      background: #16a34a !important;
+    }
+
+    button.wrong {
+      background: #dc2626 !important;
+    }
+
+    button.disabled {
+      pointer-events: none;
+      opacity: 0.95;
+    }
+
+    .feedback {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      min-height: 24px;
+    }
+
+    .next-btn {
+      margin-top: 24px;
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 12px;
+      background: #2563eb;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      display: none;
+    }
+
+    .next-btn:hover {
+      background: #1d4ed8;
+    }
+
+    .finished {
+      text-align: center;
+    }
+
+    .finished h1 {
+      margin-bottom: 20px;
+    }
+
+    .restart-btn {
+      margin-top: 20px;
+      padding: 16px 24px;
+      border: none;
+      border-radius: 12px;
+      background: #16a34a;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="topbar">
+    <div id="progress">Question 1</div>
+    <div id="score">Score: 0/0</div>
+  </div>
+
+  <div id="quiz-container">
+    <div class="question" id="question"></div>
+
+    <div class="options" id="options"></div>
+
+    <div class="feedback" id="feedback"></div>
+
+    <button class="next-btn" id="nextBtn">
+      Next Question
+    </button>
+  </div>
+</div>
+
+<script>
+  let questions = [];
+  let currentQuestionIndex = 0;
+  let score = 0;
+
+  const questionEl = document.getElementById("question");
+  const optionsEl = document.getElementById("options");
+  const feedbackEl = document.getElementById("feedback");
+  const nextBtn = document.getElementById("nextBtn");
+  const scoreEl = document.getElementById("score");
+  const progressEl = document.getElementById("progress");
+  const quizContainer = document.getElementById("quiz-container");
+
+  function shuffle(array) {
+    return array.sort(() => Math.random() - 0.5);
+  }
+
+  async function loadQuestions() {
+    const res = await fetch("questions.json");
+    questions = await res.json();
+
+    questions = shuffle(questions);
+
+    showQuestion();
+  }
+
+  function showQuestion() {
+    feedbackEl.textContent = "";
+    nextBtn.style.display = "none";
+
+    const q = questions[currentQuestionIndex];
+
+    progressEl.textContent =
+      `Question ${currentQuestionIndex + 1} / ${questions.length}`;
+
+    scoreEl.textContent =
+      `Score: ${score} / ${currentQuestionIndex}`;
+
+    questionEl.textContent = q.question;
+
+    optionsEl.innerHTML = "";
+
+    let options = Object.entries(q.options);
+
+    options = shuffle(options);
+
+    options.forEach(([key, value]) => {
+      const btn = document.createElement("button");
+
+      btn.classList.add("option");
+
+      btn.innerHTML = `<strong>${key}.</strong> ${value}`;
+
+      btn.onclick = () => selectAnswer(btn, key, q);
+
+      optionsEl.appendChild(btn);
+    });
+  }
+
+  function selectAnswer(selectedBtn, selectedKey, q) {
+
+    const buttons = document.querySelectorAll(".option");
+
+    buttons.forEach(btn => {
+      btn.classList.add("disabled");
+    });
+
+    const correctAnswer = q.answer;
+    const correctText = q.answerText;
+
+    if (selectedKey === correctAnswer) {
+      score++;
+
+      selectedBtn.classList.add("correct");
+
+      feedbackEl.innerHTML =
+        `✅ Correct!`;
+    } else {
+      selectedBtn.classList.add("wrong");
+
+      buttons.forEach(btn => {
+        if (btn.innerText.includes(correctText)) {
+          btn.classList.add("correct");
+        }
+      });
+
+      feedbackEl.innerHTML =
+        `❌ Wrong! Correct Answer: <strong>${correctAnswer}. ${correctText}</strong>`;
+    }
+
+    scoreEl.textContent =
+      `Score: ${score} / ${currentQuestionIndex + 1}`;
+
+    nextBtn.style.display = "block";
+  }
+
+  nextBtn.addEventListener("click", () => {
+
+    currentQuestionIndex++;
+
+    if (currentQuestionIndex >= questions.length) {
+      showFinalScreen();
+    } else {
+      showQuestion();
+    }
+  });
+
+  function showFinalScreen() {
+
+    const percentage =
+      ((score / questions.length) * 100).toFixed(1);
+
+    quizContainer.innerHTML = `
+      <div class="finished">
+        <h1>Quiz Finished 🎉</h1>
+
+        <h2>
+          Final Score: ${score} / ${questions.length}
+        </h2>
+
+        <h2 style="margin-top: 10px;">
+          ${percentage}%
+        </h2>
+
+        <button class="restart-btn" onclick="restartQuiz()">
+          Restart Quiz
+        </button>
+      </div>
+    `;
+  }
+
+  function restartQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+
+    questions = shuffle(questions);
+
+    quizContainer.innerHTML = `
+      <div class="question" id="question"></div>
+
+      <div class="options" id="options"></div>
+
+      <div class="feedback" id="feedback"></div>
+
+      <button class="next-btn" id="nextBtn">
+        Next Question
+      </button>
+    `;
+
+    location.reload();
+  }
+
+  loadQuestions();
+</script>
+
+</body>
+</html>
+```

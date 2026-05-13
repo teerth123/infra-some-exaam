@@ -1,0 +1,970 @@
+[
+  {
+    "question": "Which Linux framework provides kernel-level packet filtering?",
+    "options": {
+      "A": "Systemd",
+      "B": "Netfilter",
+      "C": "SELinux",
+      "D": "OpenRC"
+    },
+    "answer": "B",
+    "answerText": "Netfilter"
+  },
+  {
+    "question": "Which Netfilter hook processes packets before routing decisions?",
+    "options": {
+      "A": "NF_IP_FORWARD",
+      "B": "NF_IP_LOCAL_OUT",
+      "C": "NF_IP_PRE_ROUTING",
+      "D": "NF_IP_POST_ROUTING"
+    },
+    "answer": "C",
+    "answerText": "NF_IP_PRE_ROUTING"
+  },
+  {
+    "question": "Which iptables table is primarily used for Network Address Translation?",
+    "options": {
+      "A": "filter",
+      "B": "mangle",
+      "C": "security",
+      "D": "nat"
+    },
+    "answer": "D",
+    "answerText": "nat"
+  },
+  {
+    "question": "Which chain handles packets destined for the local host?",
+    "options": {
+      "A": "FORWARD",
+      "B": "OUTPUT",
+      "C": "INPUT",
+      "D": "POSTROUTING"
+    },
+    "answer": "C",
+    "answerText": "INPUT"
+  },
+  {
+    "question": "What is the purpose of the conntrack subsystem?",
+    "options": {
+      "A": "DNS caching",
+      "B": "Connection state tracking",
+      "C": "Packet encryption",
+      "D": "VLAN tagging"
+    },
+    "answer": "B",
+    "answerText": "Connection state tracking"
+  },
+  {
+    "question": "Which conntrack state represents an already established session?",
+    "options": {
+      "A": "NEW",
+      "B": "RELATED",
+      "C": "INVALID",
+      "D": "ESTABLISHED"
+    },
+    "answer": "D",
+    "answerText": "ESTABLISHED"
+  },
+  {
+    "question": "Which NAT technique changes the source IP address?",
+    "options": {
+      "A": "DNAT",
+      "B": "SNAT",
+      "C": "PAT",
+      "D": "ARP"
+    },
+    "answer": "B",
+    "answerText": "SNAT"
+  },
+  {
+    "question": "Which iptables command enables internet sharing using masquerading?",
+    "options": {
+      "A": "iptables -A INPUT -j MASQUERADE",
+      "B": "iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE",
+      "C": "iptables -A FORWARD -j ACCEPT",
+      "D": "iptables -t filter -A OUTPUT -j MASQUERADE"
+    },
+    "answer": "B",
+    "answerText": "iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE"
+  },
+  {
+    "question": "What is a major advantage of nftables over iptables?",
+    "options": {
+      "A": "No kernel dependency",
+      "B": "Supports only IPv6",
+      "C": "Unified syntax and atomic updates",
+      "D": "Removes NAT support"
+    },
+    "answer": "C",
+    "answerText": "Unified syntax and atomic updates"
+  },
+  {
+    "question": "Which firewall management tool commonly uses zones like public and trusted?",
+    "options": {
+      "A": "ufw",
+      "B": "iptables",
+      "C": "nft",
+      "D": "firewalld"
+    },
+    "answer": "D",
+    "answerText": "firewalld"
+  },
+  {
+    "question": "Which Ubuntu firewall utility internally uses iptables?",
+    "options": {
+      "A": "firewalld",
+      "B": "nftables",
+      "C": "ufw",
+      "D": "SELinux"
+    },
+    "answer": "C",
+    "answerText": "ufw"
+  },
+  {
+    "question": "What does Deep Packet Inspection examine?",
+    "options": {
+      "A": "Only source IP",
+      "B": "Only TCP ports",
+      "C": "Only MAC addresses",
+      "D": "Payload and application protocols"
+    },
+    "answer": "D",
+    "answerText": "Payload and application protocols"
+  },
+  {
+    "question": "What is the recommended default INPUT policy in a hardened firewall setup?",
+    "options": {
+      "A": "ACCEPT",
+      "B": "REJECT",
+      "C": "DROP",
+      "D": "FORWARD"
+    },
+    "answer": "C",
+    "answerText": "DROP"
+  },
+  {
+    "question": "Which environment variable controls executable search paths?",
+    "options": {
+      "A": "HOME",
+      "B": "PATH",
+      "C": "PWD",
+      "D": "LANG"
+    },
+    "answer": "B",
+    "answerText": "PATH"
+  },
+  {
+    "question": "Which file is typically used for persistent Bash user environment configuration?",
+    "options": {
+      "A": "/etc/fstab",
+      "B": "~/.bashrc",
+      "C": "/boot/grub.cfg",
+      "D": "/etc/hosts"
+    },
+    "answer": "B",
+    "answerText": "~/.bashrc"
+  },
+  {
+    "question": "What command reloads changes made to ~/.bashrc?",
+    "options": {
+      "A": "reload ~/.bashrc",
+      "B": "exec ~/.bashrc",
+      "C": "source ~/.bashrc",
+      "D": "bash --reset"
+    },
+    "answer": "C",
+    "answerText": "source ~/.bashrc"
+  },
+  {
+    "question": "Which variable controls shared library resolution in Linux?",
+    "options": {
+      "A": "LD_LIBRARY_PATH",
+      "B": "DISPLAY",
+      "C": "LOGNAME",
+      "D": "TERM"
+    },
+    "answer": "A",
+    "answerText": "LD_LIBRARY_PATH"
+  },
+  {
+    "question": "What is a security risk associated with improperly configured PATH variables?",
+    "options": {
+      "A": "ARP poisoning",
+      "B": "DNS tunneling",
+      "C": "PATH hijacking",
+      "D": "VLAN hopping"
+    },
+    "answer": "C",
+    "answerText": "PATH hijacking"
+  },
+  {
+    "question": "What is the primary purpose of a perimeter firewall in a campus network?",
+    "options": {
+      "A": "CPU scheduling",
+      "B": "Internet edge protection",
+      "C": "DNS resolution",
+      "D": "File synchronization"
+    },
+    "answer": "B",
+    "answerText": "Internet edge protection"
+  },
+  {
+    "question": "Which technology separates departments into isolated logical networks?",
+    "options": {
+      "A": "NAT",
+      "B": "VLAN",
+      "C": "ARP",
+      "D": "SSH"
+    },
+    "answer": "B",
+    "answerText": "VLAN"
+  },
+  {
+    "question": "What does NAC verify before allowing network access?",
+    "options": {
+      "A": "CPU temperature",
+      "B": "Monitor resolution",
+      "C": "Endpoint compliance",
+      "D": "Database schema"
+    },
+    "answer": "C",
+    "answerText": "Endpoint compliance"
+  },
+  {
+    "question": "What is the first step in a captive portal workflow?",
+    "options": {
+      "A": "Firewall opens session",
+      "B": "Authentication occurs",
+      "C": "DNS cache cleared",
+      "D": "User connects to network"
+    },
+    "answer": "D",
+    "answerText": "User connects to network"
+  },
+  {
+    "question": "Which DNS server type provides the final authoritative answer?",
+    "options": {
+      "A": "Recursive resolver",
+      "B": "Root server",
+      "C": "Authoritative server",
+      "D": "TLD server"
+    },
+    "answer": "C",
+    "answerText": "Authoritative server"
+  },
+  {
+    "question": "What type of DNS query expects the server to return the final answer?",
+    "options": {
+      "A": "Iterative query",
+      "B": "Recursive query",
+      "C": "Reverse query",
+      "D": "Zone query"
+    },
+    "answer": "B",
+    "answerText": "Recursive query"
+  },
+  {
+    "question": "Which DNS record type maps a hostname to an IPv4 address?",
+    "options": {
+      "A": "MX",
+      "B": "AAAA",
+      "C": "PTR",
+      "D": "A"
+    },
+    "answer": "D",
+    "answerText": "A"
+  },
+  {
+    "question": "Which Linux file contains DNS server entries?",
+    "options": {
+      "A": "/etc/passwd",
+      "B": "/etc/resolv.conf",
+      "C": "/etc/group",
+      "D": "/etc/shadow"
+    },
+    "answer": "B",
+    "answerText": "/etc/resolv.conf"
+  },
+  {
+    "question": "What is the primary purpose of DNSSEC?",
+    "options": {
+      "A": "Traffic compression",
+      "B": "Authentication and integrity",
+      "C": "NAT traversal",
+      "D": "VLAN segmentation"
+    },
+    "answer": "B",
+    "answerText": "Authentication and integrity"
+  },
+  {
+    "question": "Why is TCP sometimes required for DNS traffic?",
+    "options": {
+      "A": "For DHCP support",
+      "B": "For ARP resolution",
+      "C": "For zone transfers and large responses",
+      "D": "For MAC learning"
+    },
+    "answer": "C",
+    "answerText": "For zone transfers and large responses"
+  },
+  {
+    "question": "Which command is commonly used to query DNS records from the terminal?",
+    "options": {
+      "A": "chmod",
+      "B": "dig",
+      "C": "grep",
+      "D": "mount"
+    },
+    "answer": "B",
+    "answerText": "dig"
+  },
+  {
+    "question": "C\"What is the default TCP port used by SSH?",
+    "options": {
+      "A": "21",
+      "B": "22",
+      "C": "23",
+      "D": "25"
+    },
+    "answer": "B",
+    "answerText": "22"
+  },
+  {
+    "question": "Which protocol was SSH primarily designed to replace for secure remote login?",
+    "options": {
+      "A": "SMTP",
+      "B": "SNMP",
+      "C": "Telnet",
+      "D": "DNS"
+    },
+    "answer": "C",
+    "answerText": "Telnet"
+  },
+  {
+    "question": "What is the name of the SSH server daemon?",
+    "options": {
+      "A": "sshd",
+      "B": "scp",
+      "C": "sftp",
+      "D": "sshtunnel"
+    },
+    "answer": "A",
+    "answerText": "sshd"
+  },
+  {
+    "question": "Which file contains the primary SSH server configuration?",
+    "options": {
+      "A": "/etc/ssh/ssh_config",
+      "B": "/etc/network/interfaces",
+      "C": "/etc/ssh/sshd_config",
+      "D": "/var/log/auth.log"
+    },
+    "answer": "C",
+    "answerText": "/etc/ssh/sshd_config"
+  },
+  {
+    "question": "Which cryptographic algorithm is commonly used for SSH key exchange?",
+    "options": {
+      "A": "RSA",
+      "B": "AES",
+      "C": "Diffie-Hellman",
+      "D": "MD5"
+    },
+    "answer": "C",
+    "answerText": "Diffie-Hellman"
+  },
+  {
+    "question": "What is the primary purpose of SSH key exchange (KEX)?",
+    "options": {
+      "A": "Compress traffic",
+      "B": "Generate symmetric session keys securely",
+      "C": "Authenticate DNS queries",
+      "D": "Create VLANs"
+    },
+    "answer": "B",
+    "answerText": "Generate symmetric session keys securely"
+  },
+  {
+    "question": "Why does SSH switch to symmetric encryption after key exchange?",
+    "options": {
+      "A": "It supports DNSSEC",
+      "B": "It is faster and more efficient",
+      "C": "It avoids authentication",
+      "D": "It reduces routing complexity"
+    },
+    "answer": "B",
+    "answerText": "It is faster and more efficient"
+  },
+  {
+    "question": "Which SSH authentication method is considered strongest among the following?",
+    "options": {
+      "A": "Password",
+      "B": "Public key",
+      "C": "Anonymous",
+      "D": "FTP login"
+    },
+    "answer": "B",
+    "answerText": "Public key"
+  },
+  {
+    "question": "What is the main goal of SSH hardening?",
+    "options": {
+      "A": "Increase bandwidth",
+      "B": "Reduce attack surface",
+      "C": "Enable DHCP",
+      "D": "Improve DNS caching"
+    },
+    "answer": "B",
+    "answerText": "Reduce attack surface"
+  },
+  {
+    "question": "Which command validates SSH server configuration syntax?",
+    "options": {
+      "A": "ssh -v",
+      "B": "sshd -t",
+      "C": "systemctl ssh",
+      "D": "ssh-keyscan"
+    },
+    "answer": "B",
+    "answerText": "sshd -t"
+  },
+  {
+    "question": "Which setting completely disables SSH root login?",
+    "options": {
+      "A": "RootLogin disable",
+      "B": "PermitRootLogin no",
+      "C": "DisableRoot yes",
+      "D": "AllowRoot false"
+    },
+    "answer": "B",
+    "answerText": "PermitRootLogin no"
+  },
+  {
+    "question": "What is the recommended workflow for privileged administration?",
+    "options": {
+      "A": "Direct root login",
+      "B": "Anonymous login",
+      "C": "Normal user with sudo escalation",
+      "D": "Guest account access"
+    },
+    "answer": "C",
+    "answerText": "Normal user with sudo escalation"
+  },
+  {
+    "question": "Which directive allows only specific users to access SSH?",
+    "options": {
+      "A": "PermitUsers",
+      "B": "AllowUsers",
+      "C": "UserLimit",
+      "D": "AuthorizedUsers"
+    },
+    "answer": "B",
+    "answerText": "AllowUsers"
+  },
+  {
+    "question": "What does the setting 'MaxAuthTries 3' help prevent?",
+    "options": {
+      "A": "Packet fragmentation",
+      "B": "DNS poisoning",
+      "C": "Brute-force attacks",
+      "D": "ARP spoofing"
+    },
+    "answer": "C",
+    "answerText": "Brute-force attacks"
+  },
+  {
+    "question": "Which configuration disables empty password logins?",
+    "options": {
+      "A": "PermitEmptyPasswords no",
+      "B": "AllowBlankPasswords no",
+      "C": "PasswordRequired yes",
+      "D": "AuthMandatory yes"
+    },
+    "answer": "A",
+    "answerText": "PermitEmptyPasswords no"
+  },
+  {
+    "question": "What is considered one of the strongest SSH hardening measures?",
+    "options": {
+      "A": "Enable Telnet fallback",
+      "B": "Disable password authentication",
+      "C": "Allow anonymous login",
+      "D": "Enable FTP tunneling"
+    },
+    "answer": "B",
+    "answerText": "Disable password authentication"
+  },
+  {
+    "question": "Which command generates an Ed25519 SSH key pair?",
+    "options": {
+      "A": "ssh-keygen -t aes",
+      "B": "ssh-keygen -t ed25519",
+      "C": "ssh-create-key ed25519",
+      "D": "openssl genrsa"
+    },
+    "answer": "B",
+    "answerText": "ssh-keygen -t ed25519"
+  },
+  {
+    "question": "Why is Ed25519 preferred over older algorithms?",
+    "options": {
+      "A": "Larger key sizes only",
+      "B": "Supports HTTP",
+      "C": "Faster and more secure",
+      "D": "Uses DES encryption"
+    },
+    "answer": "C",
+    "answerText": "Faster and more secure"
+  },
+  {
+    "question": "Where are trusted server fingerprints stored on the client machine?",
+    "options": {
+      "A": "/etc/passwd",
+      "B": "~/.ssh/known_hosts",
+      "C": "/var/log/secure",
+      "D": "/etc/shadow"
+    },
+    "answer": "B",
+    "answerText": "~/.ssh/known_hosts"
+  },
+  {
+    "question": "What warning may indicate a possible man-in-the-middle attack in SSH?",
+    "options": {
+      "A": "Connection timeout",
+      "B": "REMOTE HOST IDENTIFICATION HAS CHANGED",
+      "C": "Broken pipe",
+      "D": "No route to host"
+    },
+    "answer": "B",
+    "answerText": "REMOTE HOST IDENTIFICATION HAS CHANGED"
+  },
+  {
+    "question": "Why do administrators sometimes change SSH from port 22 to another port?",
+    "options": {
+      "A": "To increase encryption strength",
+      "B": "To reduce automated scanning and brute-force noise",
+      "C": "To disable SSH tunneling",
+      "D": "To improve DNS performance"
+    },
+    "answer": "B",
+    "answerText": "To reduce automated scanning and brute-force noise"
+  },
+  {
+    "question": "Which command allows TCP port 2222 through firewalld?",
+    "options": {
+      "A": "firewall-cmd --add-service=2222",
+      "B": "firewall-cmd --permanent --add-port=2222/tcp",
+      "C": "iptables --open 2222",
+      "D": "ufw allow ssh22"
+    },
+    "answer": "B",
+    "answerText": "firewall-cmd --permanent --add-port=2222/tcp"
+  },
+  {
+    "question": "What does the SSH directive 'ListenAddress' control?",
+    "options": {
+      "A": "DNS resolution",
+      "B": "Encryption algorithm",
+      "C": "Interface/IP binding",
+      "D": "User authentication"
+    },
+    "answer": "C",
+    "answerText": "Interface/IP binding"
+  },
+  {
+    "question": "Which SSH setting disables X11 forwarding?",
+    "options": {
+      "A": "X11Disable yes",
+      "B": "X11Forwarding no",
+      "C": "ForwardX11 false",
+      "D": "DisableX11 true"
+    },
+    "answer": "B",
+    "answerText": "X11Forwarding no"
+  },
+  {
+    "question": "Which cipher is considered a strong modern SSH encryption option?",
+    "options": {
+      "A": "DES",
+      "B": "RC4",
+      "C": "chacha20-poly1305@openssh.com",
+      "D": "3DES"
+    },
+    "answer": "C",
+    "answerText": "chacha20-poly1305@openssh.com"
+  },
+  {
+    "question": "What is the purpose of local port forwarding in SSH?",
+    "options": {
+      "A": "Expose remote service externally",
+      "B": "Access remote services locally through encrypted tunnel",
+      "C": "Create VLANs",
+      "D": "Configure DNSSEC"
+    },
+    "answer": "B",
+    "answerText": "Access remote services locally through encrypted tunnel"
+  },
+  {
+    "question": "Which SSH option creates a SOCKS proxy?",
+    "options": {
+      "A": "ssh -R",
+      "B": "ssh -L",
+      "C": "ssh -D",
+      "D": "ssh -X"
+    },
+    "answer": "C",
+    "answerText": "ssh -D"
+  },
+  {
+    "question": "What is the role of a bastion host in SSH architecture?",
+    "options": {
+      "A": "Acts as DNS resolver",
+      "B": "Provides secure gateway to internal servers",
+      "C": "Handles DHCP allocation",
+      "D": "Performs packet fragmentation"
+    },
+    "answer": "B",
+    "answerText": "Provides secure gateway to internal servers"
+  },
+  {
+    "question": "What tool helps block IPs after repeated SSH login failures?",
+    "options": {
+      "A": "Wireshark",
+      "B": "Fail2Ban",
+      "C": "tcpdump",
+      "D": "Netcat"
+    },
+    "answer": "B",
+    "answerText": "Fail2Ban"
+  },
+  {
+    "question": "B\"What does VI stand for in VI Automation?",
+    "options": {
+      "A": "Virtual Integration",
+      "B": "Virtual Infrastructure",
+      "C": "Visual Interface",
+      "D": "Virtual Internet"
+    },
+    "answer": "B",
+    "answerText": "Virtual Infrastructure"
+  },
+  {
+    "question": "What is the primary goal of infrastructure automation?",
+    "options": {
+      "A": "Increase manual configuration",
+      "B": "Reduce scalability",
+      "C": "Automate provisioning and management",
+      "D": "Disable orchestration"
+    },
+    "answer": "C",
+    "answerText": "Automate provisioning and management"
+  },
+  {
+    "question": "Which concept turns infrastructure into programmable code?",
+    "options": {
+      "A": "Containerization",
+      "B": "Infrastructure as Code",
+      "C": "Hyperthreading",
+      "D": "Network bridging"
+    },
+    "answer": "B",
+    "answerText": "Infrastructure as Code"
+  },
+  {
+    "question": "Which Infrastructure as Code tool is mainly used for infrastructure provisioning?",
+    "options": {
+      "A": "Ansible",
+      "B": "Chef",
+      "C": "Terraform",
+      "D": "Nagios"
+    },
+    "answer": "C",
+    "answerText": "Terraform"
+  },
+  {
+    "question": "What is the main characteristic of declarative automation?",
+    "options": {
+      "A": "Defines exact execution steps",
+      "B": "Defines desired final state",
+      "C": "Requires manual deployment",
+      "D": "Uses only shell scripts"
+    },
+    "answer": "B",
+    "answerText": "Defines desired final state"
+  },
+  {
+    "question": "What problem occurs when systems diverge from their intended configuration?",
+    "options": {
+      "A": "Packet loss",
+      "B": "Configuration drift",
+      "C": "Hyperjacking",
+      "D": "Failover"
+    },
+    "answer": "B",
+    "answerText": "Configuration drift"
+  },
+  {
+    "question": "What is the difference between orchestration and automation?",
+    "options": {
+      "A": "Automation coordinates workflows",
+      "B": "Orchestration executes only one task",
+      "C": "Automation handles single tasks while orchestration coordinates workflows",
+      "D": "There is no difference"
+    },
+    "answer": "C",
+    "answerText": "Automation handles single tasks while orchestration coordinates workflows"
+  },
+  {
+    "question": "Which tool is commonly used for automated cloud VM initialization?",
+    "options": {
+      "A": "PXE",
+      "B": "cloud-init",
+      "C": "Nagios",
+      "D": "Vagrant"
+    },
+    "answer": "B",
+    "answerText": "cloud-init"
+  },
+  {
+    "question": "What capability allows infrastructure to automatically recover from failures?",
+    "options": {
+      "A": "Load shedding",
+      "B": "Self-healing infrastructure",
+      "C": "DNS forwarding",
+      "D": "Packet filtering"
+    },
+    "answer": "B",
+    "answerText": "Self-healing infrastructure"
+  },
+  {
+    "question": "Which cloud service model provides virtual machines, storage, and networking?",
+    "options": {
+      "A": "SaaS",
+      "B": "PaaS",
+      "C": "FaaS",
+      "D": "IaaS"
+    },
+    "answer": "D",
+    "answerText": "IaaS"
+  },
+  {
+    "question": "What does horizontal scaling involve?",
+    "options": {
+      "A": "Increasing CPU/RAM of one server",
+      "B": "Adding more servers",
+      "C": "Reducing storage",
+      "D": "Replacing hypervisors"
+    },
+    "answer": "B",
+    "answerText": "Adding more servers"
+  },
+  {
+    "question": "What is the key idea behind immutable infrastructure?",
+    "options": {
+      "A": "Modify servers continuously",
+      "B": "Servers are manually patched",
+      "C": "Destroy and redeploy instances instead of modifying them",
+      "D": "Disable automation"
+    },
+    "answer": "C",
+    "answerText": "Destroy and redeploy instances instead of modifying them"
+  },
+  {
+    "question": "Which configuration management tool is agentless and primarily uses SSH?",
+    "options": {
+      "A": "Puppet",
+      "B": "Chef",
+      "C": "Ansible",
+      "D": "SaltStack"
+    },
+    "answer": "C",
+    "answerText": "Ansible"
+  },
+  {
+    "question": "What is the correct order in a CI/CD pipeline?",
+    "options": {
+      "A": "Deploy → Build → Test",
+      "B": "Code Commit → Build → Test → Deploy → Monitor",
+      "C": "Test → Build → Commit",
+      "D": "Monitor → Build → Deploy"
+    },
+    "answer": "B",
+    "answerText": "Code Commit → Build → Test → Deploy → Monitor"
+  },
+  {
+    "question": "Which type of monitoring focuses on uptime verification?",
+    "options": {
+      "A": "Security monitoring",
+      "B": "Application monitoring",
+      "C": "Availability monitoring",
+      "D": "Latency monitoring"
+    },
+    "answer": "C",
+    "answerText": "Availability monitoring"
+  },
+  {
+    "question": "What architecture component stores timestamped monitoring metrics?",
+    "options": {
+      "A": "Load balancer",
+      "B": "Time-Series Database",
+      "C": "DNS resolver",
+      "D": "Reverse proxy"
+    },
+    "answer": "B",
+    "answerText": "Time-Series Database"
+  },
+  {
+    "question": "Which monitoring protocol is commonly used for network devices?",
+    "options": {
+      "A": "FTP",
+      "B": "SNMP",
+      "C": "ARP",
+      "D": "SMTP"
+    },
+    "answer": "B",
+    "answerText": "SNMP"
+  },
+  {
+    "question": "What is an advantage of agent-based monitoring?",
+    "options": {
+      "A": "No software installation needed",
+      "B": "Lower visibility",
+      "C": "Deep OS-level visibility",
+      "D": "No metrics collection"
+    },
+    "answer": "C",
+    "answerText": "Deep OS-level visibility"
+  },
+  {
+    "question": "Which database is optimized for timestamped metric storage?",
+    "options": {
+      "A": "MySQL",
+      "B": "MongoDB",
+      "C": "Prometheus",
+      "D": "Redis"
+    },
+    "answer": "C",
+    "answerText": "Prometheus"
+  },
+  {
+    "question": "What is Grafana primarily used for?",
+    "options": {
+      "A": "Hypervisor management",
+      "B": "DNS resolution",
+      "C": "Metrics visualization and dashboards",
+      "D": "Firewall filtering"
+    },
+    "answer": "C",
+    "answerText": "Metrics visualization and dashboards"
+  },
+  {
+    "question": "What does the ELK stack component Kibana provide?",
+    "options": {
+      "A": "Packet inspection",
+      "B": "Visualization",
+      "C": "Log ingestion",
+      "D": "Container runtime"
+    },
+    "answer": "B",
+    "answerText": "Visualization"
+  },
+  {
+    "question": "What does hybrid cloud combine?",
+    "options": {
+      "A": "Multiple private clouds",
+      "B": "Public cloud only",
+      "C": "Private cloud and public cloud",
+      "D": "Bare metal and containers"
+    },
+    "answer": "C",
+    "answerText": "Private cloud and public cloud"
+  },
+  {
+    "question": "Which connectivity technology is commonly used in hybrid cloud networking?",
+    "options": {
+      "A": "ARP",
+      "B": "IPSec VPN",
+      "C": "SMTP",
+      "D": "NAT"
+    },
+    "answer": "B",
+    "answerText": "IPSec VPN"
+  },
+  {
+    "question": "What technology helps applications move easily between cloud environments?",
+    "options": {
+      "A": "Static routing",
+      "B": "Containers",
+      "C": "BIOS virtualization",
+      "D": "RAID"
+    },
+    "answer": "B",
+    "answerText": "Containers"
+  },
+  {
+    "question": "What is cloud bursting?",
+    "options": {
+      "A": "Destroying cloud workloads",
+      "B": "Temporary migration to cloud during peak demand",
+      "C": "Reducing VM memory",
+      "D": "Encrypting DNS traffic"
+    },
+    "answer": "B",
+    "answerText": "Temporary migration to cloud during peak demand"
+  },
+  {
+    "question": "Which hypervisor type runs directly on hardware?",
+    "options": {
+      "A": "Type 2",
+      "B": "Hosted",
+      "C": "Containerized",
+      "D": "Type 1"
+    },
+    "answer": "D",
+    "answerText": "Type 1"
+  },
+  {
+    "question": "Which of the following is a Type 2 hypervisor?",
+    "options": {
+      "A": "VMware ESXi",
+      "B": "Xen",
+      "C": "Oracle VirtualBox",
+      "D": "Hyper-V"
+    },
+    "answer": "C",
+    "answerText": "Oracle VirtualBox"
+  },
+  {
+    "question": "What virtualization technique uses Intel VT-x and AMD-V?",
+    "options": {
+      "A": "Paravirtualization",
+      "B": "Hardware-assisted virtualization",
+      "C": "Nested virtualization",
+      "D": "Process isolation"
+    },
+    "answer": "B",
+    "answerText": "Hardware-assisted virtualization"
+  },
+  {
+    "question": "What process allows a running VM to move between hosts without downtime?",
+    "options": {
+      "A": "Snapshotting",
+      "B": "Clustering",
+      "C": "Live migration",
+      "D": "Deduplication"
+    },
+    "answer": "C",
+    "answerText": "Live migration"
+  },
+  {
+    "question": "What is a major difference between containers and virtual machines?",
+    "options": {
+      "A": "Containers use separate kernels",
+      "B": "VMs share host kernel",
+      "C": "Containers share host kernel while VMs use separate kernels",
+      "D": "VMs start faster than containers"
+    },
+    "answer": "C",
+    "answerText": "Containers share host kernel while VMs use separate kernels"
+  }
+]
